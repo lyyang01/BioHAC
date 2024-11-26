@@ -1,0 +1,24 @@
+#clustering and EDA
+'''
+Perform clustering of the cells in the HLCA. For the final HLCA, you also need calculate marker genes for every clustering. I provide the dataset to you. /data/integrated_dataset_copy.h5ad: the integrated single-cell data with scANVI that needed to be clustered. The integrated representations is in "X_scANVI" of the adata.
+'''
+
+#variance explained
+'''
+determine how much of the variance in the integrated HLCA embedding is explained by each of the metadata covariates including "dataset", "tissue_dissociation_protocol", "log10_total_counts", "mito_frac", "3'_or_5'", "BMI", "cell_ranger_version_short", "cell_viability_%", "fresh_or_frozen", "sample_type", "sequencing_platform_short", "sex", "single_cell_platform", "smoking_status_num", "subject_type", "subject_ID", "anatomical_region_ccf_score", "nose", "age". You need to use the results of the third level clustering for analysis. Note that your analysis should be condected from sample-level observations. Datasets are provided in /data/final_adata_with_subclusters.h5ad that is the integrated single-cell data after multi-level clustering. The 'obs' parameter in "transformed_data.h5ad" contains several keys that you can be used: (1) Results of multi-level clustering are stored in "cluster_level_1", "cluster_level_2", "cluster_level_3" and "cluster_level_4". (2) Embedding representations of all single-cell data are stored in "X_scANVI". (3) Samples that can be used as identifiers for aggregating data are stored in "sample".
+'''
+
+#cell integration
+'''
+Perform atlas-level integration of lung data with scVI. Datasets are provided in '../bio-bench/data/lung_atlas.h5ad'. lung_atlas.h5ad is the data needed to be integrated.
+'''
+
+#chromatin accessibility
+'''
+Perform chromatin accessibility analysis with PEAKVI. Datasets are provided in '../bio-bench/data/atac_pbmc_5k.untar/filtered_peak_bc_matrix'. filtered_peak_bc_matrix is a folder that contains scATACseq data sampled  from 10X of 5K PBMCs to be analyzed.
+'''
+
+#Marker-based annotation
+'''
+Perform assigning single-cell RNA-seq data to known cell types with CellAssign. Datasets are provided in '../bio-bench/data/03/sce_follicular.h5ad', and '../bio-bench/data/03/fl_celltype.csv'. sce_follicular.h5ad is the follicular lymphoma data. fl_celltype.csv is the marker gene matrix.
+'''
