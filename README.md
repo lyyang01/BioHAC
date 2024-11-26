@@ -1,9 +1,9 @@
 ## Config
-change the 'config.py' to fill in your openai key for LLMs.
+change the 'config.py' to fill in your openai key for LLMs.  
 all requirement packages are provided in requirements.txt
 
 ## Run the BioHAC
-To start BioHAC with a visual interface, you can use the following code:
+To start BioHAC with a visual interface, you can use the following code:  
 chainlit run biohac.py --port=8001
 
 ## Dataset
